@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import EmailPropTypes from './PropTypes'
+import EmailPropTypes from '../PropTypes'
 
 export default function Span(props) {
   return (

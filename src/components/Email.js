@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import EmailPropTypes from './PropTypes'
+import EmailPropTypes from '../PropTypes'
 import Box from './Box'
 import Item from './Item'
 

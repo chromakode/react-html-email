@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Email, Image, Item, Span, A } from '../src'
+import { Box, Email, Image, Item, Span, A } from '../src/index'
 
 const email = (
   <Email title="Test Email">

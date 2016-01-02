@@ -3,7 +3,7 @@ import injectReactEmailAttributes from '../src/injectReactEmailAttributes'
 import renderEmail from '../src/renderEmail'
 import kitchenSink from '../examples/kitchenSink'
 import React from 'react'
-import A from '../src/A'
+import { A } from '../src/index'
 
 describe('renderEmail', () => {
   before(() => {
