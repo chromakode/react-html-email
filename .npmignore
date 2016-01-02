@@ -2,3 +2,4 @@ examples/
 scripts/
 src/
 test/
+coverage/
