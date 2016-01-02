@@ -5,4 +5,8 @@ node_js:
 
 script:
   - npm run lint
-  - npm test
+  - npm run test:cov
+
+after_success:
+  - npm install coveralls
+  - cat ./coverage/lcov.info | $(npm bin)/coveralls
