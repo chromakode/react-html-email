@@ -27,7 +27,7 @@ To render a simple email:
 ```js
 import { Email, Item, Span, A, renderEmail } from 'react-html-email'
 
-renderEmail(
+const emailHTML = renderEmail(
   <Email title="Hello World!">
     <Item align="center">
       <Span fontSize={20}>
