@@ -78,6 +78,54 @@ ReactHTMLEmail.configureStyleValidator({
 })
 ```
 
+## Components
+
+Components in `react-html-email` include defaults for basic style properties, so that client styles are reset and normalized. Every component accepts a `style` prop which overrides the reset styles.
+
+### `<Email>`
+
+An HTML document with a centered 600px `<table>` inside `<table>` container based on [HTML Email Boilerplate](https://github.com/seanpowell/Email-Boilerplate).
+
+It's necessary to always include a `title` prop for some clients' "open in browser" feature.
+
+See [MailChimp's HTML guide](http://templates.mailchimp.com/development/html/) for how this works.
+
+### `<Box>`
+
+A simplification of the `<table>` element, the workhorse of an HTML email design. `<Box>`es contain a vertical stack of `<Item>`s. Use them to create visual structure, filled buttons, and spacing.
+
+### `<Item>`
+
+A subsection of a `<Box>`, essentially a `<tr><td>` unit.
+
+### `<Span>`
+
+Use to assign styles to text.
+
+It can be handy to create an object containing your default text styles for reuse. For example:
+
+```js
+const textStyles = {
+  fontFamily: 'Verdana',
+  fontSize: 42,
+  fontWeight: 'bold',
+  color: 'orange',
+}
+
+[...]
+
+<Span {...textDefaults}>Congratulations!</Span>
+<Span {...textDefaults}>You won a free cruise!</Span>
+```
+
+### `<A>`
+
+Use to format links. Requires an `href` prop. Always sets `target="_blank"` and defaults to underline. To remove the underline, set `textDecoration="none"`.
+
+### `<Image>`
+
+An image, without any pesky borders, outlines, or underlines by default. Requires a `src` prop, and `width` and `height` to be set. You can override the default styles (such as adding a border) using the `style` prop.
+
 ## License
 
 [MIT](https://github.com/chromakode/react-html-email/blob/master/LICENSE)
