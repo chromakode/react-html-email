@@ -29,12 +29,12 @@ describe('StyleValidator', () => {
   })
 
   it('does not return an error on a known property, but warns with comments', () => {
-    const spy = spyOn(console, 'warn')
     const val = new StyleValidator({ platforms: ['gmail-android', 'yahoo-mail'] })
+    const spy = spyOn(console, 'warn')
     const result = val.validate({ backgroundSize: '11px' }, '<Test>')
+    spy.restore()
     expect(spy).toHaveBeenCalledWith('Warning: Style property `background-size` supplied to `<Test>`, in gmail-android, yahoo-mail: image not stretched')
     expect(result).toBe(undefined)
-    spy.restore()
   })
 
   it('treats hyphenated-lowercase property names the same as camelCase', () => {
