@@ -1,6 +1,17 @@
 {
   "name": "react-html-email",
+  "description": "Create elegant HTML email templates using React.",
   "version": "0.1.0",
+  "keywords": [
+    "react",
+    "html",
+    "email"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Max Goodman",
+    "email": "c@chromakode.com"
+  },
   "scripts": {
     "lint": "eslint ./examples ./scripts ./src ./test",
     "test": "mocha --compilers js:babel-register",
@@ -10,6 +21,7 @@
     "prepublish": "npm run compile"
   },
   "main": "lib/index.js",
+  "repository": "chromakode/react-html-email",
   "dependencies": {
     "react": "~0.14.5",
     "react-dom": "~0.14.5"
