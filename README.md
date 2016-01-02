@@ -78,6 +78,10 @@ ReactHTMLEmail.configureStyleValidator({
 })
 ```
 
+### `PropTypes.style`
+
+A PropTypes validator for checking email inline style compatibility. Used by default in the components below. Exported for use in your own components.
+
 ## Components
 
 Components in `react-html-email` include defaults for basic style properties, so that client styles are reset and normalized. Every component accepts a `style` prop which overrides the reset styles.
