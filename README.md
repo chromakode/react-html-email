@@ -2,6 +2,8 @@
 
 [![Build Status](https://img.shields.io/travis/chromakode/react-html-email/master.svg?style=flat-square)](https://travis-ci.org/chromakode/react-html-email)
 [![Coverage Status](https://img.shields.io/coveralls/chromakode/react-html-email/master.svg?style=flat-square)](https://coveralls.io/github/chromakode/react-html-email?branch=master)
+[![npm](https://img.shields.io/npm/v/react-html-email.svg)](https://www.npmjs.com/package/react-html-email)
+[![npm](https://img.shields.io/npm/l/react-html-email.svg)](https://github.com/chromakode/react-html-email/blob/master/LICENSE)
 
 Modern HTML emails are a tangle of archaic HTML and inline styles. This library encapsulates the cruft into simple React components and helps avoid common pitfalls.
 
