@@ -22,10 +22,6 @@
   },
   "main": "lib/index.js",
   "repository": "chromakode/react-html-email",
-  "dependencies": {
-    "react": "~0.14.5",
-    "react-dom": "~0.14.5"
-  },
   "devDependencies": {
     "cheerio": "~0.19.0",
     "node-fetch": "~1.3.3",
@@ -42,5 +38,9 @@
     "eslint-plugin-react": "~3.11.2",
     "eslint-config-airbnb": "~2.0.0",
     "babel-eslint": "~4.1.6"
+  },
+  "peerDependencies": {
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0"
   }
 }
