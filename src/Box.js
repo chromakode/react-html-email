@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
+import EmailPropTypes from './PropTypes'
 
 export default function Box({ children, ...props }) {
   return (
@@ -11,16 +12,16 @@ export default function Box({ children, ...props }) {
 }
 
 Box.propTypes = {
-  cellPadding: React.PropTypes.number,
-  cellSpacing: React.PropTypes.number,
-  border: React.PropTypes.string,
-  bgcolor: React.PropTypes.string,
-  width: React.PropTypes.string,
-  height: React.PropTypes.string,
-  align: React.PropTypes.oneOf(['left', 'center', 'right']),
-  valign: React.PropTypes.oneOf(['top', 'middle', 'bottom']),
-  style: React.PropTypes.object,
-  children: React.PropTypes.node,
+  cellPadding: PropTypes.number,
+  cellSpacing: PropTypes.number,
+  border: PropTypes.string,
+  bgcolor: PropTypes.string,
+  width: PropTypes.string,
+  height: PropTypes.string,
+  align: PropTypes.oneOf(['left', 'center', 'right']),
+  valign: PropTypes.oneOf(['top', 'middle', 'bottom']),
+  style: EmailPropTypes.style,
+  children: PropTypes.node,
 }
 
 Box.defaultProps = {

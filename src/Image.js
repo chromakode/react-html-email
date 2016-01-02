@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
+import EmailPropTypes from './PropTypes'
 
 export default function Image(props) {
   return (
@@ -13,8 +14,8 @@ export default function Image(props) {
 }
 
 Image.propTypes = {
-  src: React.PropTypes.string.isRequired,
-  width: React.PropTypes.number.isRequired,
-  height: React.PropTypes.number.isRequired,
-  style: React.PropTypes.object,
+  src: PropTypes.string.isRequired,
+  width: PropTypes.number.isRequired,
+  height: PropTypes.number.isRequired,
+  style: EmailPropTypes.style,
 }

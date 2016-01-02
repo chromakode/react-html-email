@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
+import EmailPropTypes from './PropTypes'
 import Box from './Box'
 import Item from './Item'
 
@@ -32,10 +33,10 @@ export default function Email(props) {
 }
 
 Email.propTypes = {
-  title: React.PropTypes.string.isRequired,
-  bgcolor: React.PropTypes.string,
-  cellPadding: React.PropTypes.number,
-  cellSpacing: React.PropTypes.number,
-  style: React.PropTypes.object,
-  children: React.PropTypes.node,
+  title: PropTypes.string.isRequired,
+  bgcolor: PropTypes.string,
+  cellPadding: PropTypes.number,
+  cellSpacing: PropTypes.number,
+  style: EmailPropTypes.style,
+  children: PropTypes.node,
 }

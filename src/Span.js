@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
+import EmailPropTypes from './PropTypes'
 
 export default function Span(props) {
   return (
@@ -14,13 +15,13 @@ export default function Span(props) {
 }
 
 Span.propTypes = {
-  fontFamily: React.PropTypes.string,
-  fontSize: React.PropTypes.number,
-  fontWeight: React.PropTypes.string,
-  lineHeight: React.PropTypes.number,
-  color: React.PropTypes.string,
-  style: React.PropTypes.object,
-  children: React.PropTypes.node,
+  fontFamily: PropTypes.string,
+  fontSize: PropTypes.number,
+  fontWeight: PropTypes.string,
+  lineHeight: PropTypes.number,
+  color: PropTypes.string,
+  style: EmailPropTypes.style,
+  children: PropTypes.node,
 }
 
 Span.defaultProps = {

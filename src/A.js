@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
+import EmailPropTypes from './PropTypes'
 
 export default function A(props) {
   return (
@@ -11,11 +12,11 @@ export default function A(props) {
 }
 
 A.propTypes = {
-  href: React.PropTypes.string.isRequired,
-  color: React.PropTypes.string,
-  textDecoration: React.PropTypes.string,
-  style: React.PropTypes.object,
-  children: React.PropTypes.node,
+  href: PropTypes.string.isRequired,
+  color: PropTypes.string,
+  textDecoration: PropTypes.string,
+  style: EmailPropTypes.style,
+  children: PropTypes.node,
 }
 
 A.defaultProps = {
