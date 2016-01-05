@@ -59,7 +59,7 @@ React ignores some attributes we need, such as the table `align` and `valign` pr
 By default, inline styles passed to the `style` prop will be validated against [Campaign Monitor's CSS Support Guide](https://www.campaignmonitor.com/css/). Here are the default settings, which can be overridden using `configStyleValidator`:
 
 ```js
-ReactHTMLEmail.configureStyleValidator({
+ReactHTMLEmail.configStyleValidator({
   // When strict, incompatible style properties will result in an error.
   strict: true,
 
