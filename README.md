@@ -62,10 +62,10 @@ By default, inline styles passed to the `style` prop will be validated against [
 ReactHTMLEmail.configureStyleValidator({
   // When strict, incompatible style properties will result in an error.
   strict: true,
-  
+
   // Whether to warn when compatibility notes for a style property exist.
   warn: true,
-  
+
   // Platforms to consider for compatibility checks.
   platforms: [
     'gmail',
