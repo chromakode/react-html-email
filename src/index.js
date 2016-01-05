@@ -19,5 +19,12 @@ export {
   injectReactEmailAttributes,
   configStyleValidator,
   renderEmail,
+}
+
+export default {
+  PropTypes,
+  injectReactEmailAttributes,
+  configStyleValidator,
+  renderEmail,
   __styleValidator,
 }

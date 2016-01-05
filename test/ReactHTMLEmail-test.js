@@ -1,5 +1,5 @@
 import expect, { spyOn } from 'expect'
-import * as ReactHTMLEmail from '../src/index'
+import ReactHTMLEmail from '../src/index'
 
 describe('ReactHTMLEmail', () => {
   describe('PropTypes.style', () => {
