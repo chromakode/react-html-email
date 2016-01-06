@@ -57,9 +57,8 @@ function scrapeProperties(html) {
       if (propName === 'background') {
         // skip "CSS3" background property
         return
-      } else {
-        throw new Error('Unexpected duplicate property row.')
       }
+      throw new Error('Unexpected duplicate property row.')
     }
 
     if (propName === 'border' || propName === 'padding' || propName === 'margin') {
