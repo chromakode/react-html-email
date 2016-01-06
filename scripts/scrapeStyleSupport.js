@@ -53,6 +53,15 @@ function scrapeProperties(html) {
       return
     }
 
+    if (props.hasOwnProperty(propName)) {
+      if (propName === 'background') {
+        // skip "CSS3" background property
+        return
+      } else {
+        throw new Error('Unexpected duplicate property row.')
+      }
+    }
+
     if (propName === 'border' || propName === 'padding' || propName === 'margin') {
       ['-left', '-right', '-top', '-bottom'].forEach(suffix =>
         props[propName + suffix] = data
