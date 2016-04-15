@@ -3,7 +3,7 @@ import EmailPropTypes from '../PropTypes'
 
 export default function Image(props) {
   return (
-    <img src={props.src} width={props.width} height={props.height} style={{
+    <img alt={props.alt} src={props.src} width={props.width} height={props.height} style={{
       display: 'block',
       outline: 'none',
       border: 'none',
@@ -14,6 +14,7 @@ export default function Image(props) {
 }
 
 Image.propTypes = {
+  alt: PropTypes.string.isRequired,
   src: PropTypes.string.isRequired,
   width: PropTypes.number.isRequired,
   height: PropTypes.number.isRequired,
