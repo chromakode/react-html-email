@@ -1,9 +1,10 @@
 import React, { PropTypes } from 'react'
 import EmailPropTypes from '../PropTypes'
+import includeDataProps from '../includeDataProp'
 
 export default function Image(props) {
   return (
-    <img alt={props.alt} src={props.src} width={props.width} height={props.height} style={{
+    <img {...includeDataProps(props)} alt={props.alt} src={props.src} width={props.width} height={props.height} style={{
       display: 'block',
       outline: 'none',
       border: 'none',

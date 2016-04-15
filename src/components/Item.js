@@ -1,10 +1,11 @@
 import React, { PropTypes } from 'react'
 import EmailPropTypes from '../PropTypes'
+import includeDataProps from '../includeDataProp'
 
 export default function Item(props) {
   return (
     <tr>
-      <td align={props.align} valign={props.valign} bgcolor={props.bgcolor} style={props.style}>
+      <td {...includeDataProps(props)} align={props.align} valign={props.valign} bgcolor={props.bgcolor} style={props.style}>
         {props.children}
       </td>
     </tr>
