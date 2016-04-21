@@ -1,9 +1,10 @@
 import React, { PropTypes } from 'react'
 import EmailPropTypes from '../PropTypes'
+import includeDataProps from '../includeDataProps'
 
 export default function Span(props) {
   return (
-    <span style={{
+    <span {...includeDataProps(props)} style={{
       fontFamily: props.fontFamily,
       fontSize: props.fontSize,
       fontWeight: props.fontWeight,

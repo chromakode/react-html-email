@@ -1,9 +1,10 @@
 import React, { PropTypes } from 'react'
 import EmailPropTypes from '../PropTypes'
+import includeDataProps from '../includeDataProps'
 
 export default function A(props) {
   return (
-    <a href={props.href} target="_blank" style={{
+    <a {...includeDataProps(props)} href={props.href} target="_blank" style={{
       color: props.color,
       textDecoration: props.textDecoration,
       ...props.style,
