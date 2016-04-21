@@ -12,6 +12,7 @@ export default function Email(props) {
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>{props.title}</title>
+        {props.headCSS && <style type="text/css">{props.headCSS}</style>}
       </head>
       <body style={{
         width: '100%',
@@ -38,5 +39,6 @@ Email.propTypes = {
   cellPadding: PropTypes.number,
   cellSpacing: PropTypes.number,
   style: EmailPropTypes.style,
+  headCSS: PropTypes.string,
   children: PropTypes.node,
 }

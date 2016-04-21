@@ -1,8 +1,14 @@
 import React from 'react'
 import { Box, Email, Image, Item, Span, A } from '../src/index'
 
+const css = `
+@media only screen and (max-device-width: 480px) {
+  font-size: 20px !important;
+}`.trim()
+
+
 const email = (
-  <Email title="Test Email">
+  <Email title="Test Email" headCSS={css}>
     <Item>
       <Span fontSize={15}>Hello, world!</Span>
     </Item>
