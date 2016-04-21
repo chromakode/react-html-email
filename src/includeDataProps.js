@@ -1,11 +1,11 @@
 export default function (props) {
-  const dataProp = {}
+  const dataProps = {}
 
   Object.keys(props).forEach(key => {
     if (key.indexOf('data-') > -1) {
-      dataProp[key] = props[key]
+      dataProps[key] = props[key]
     }
   })
 
-  return dataProp
+  return dataProps
 }

@@ -1,10 +1,9 @@
 import React, { PropTypes } from 'react'
 import EmailPropTypes from '../PropTypes'
-import includeDataProps from '../includeDataProp'
 
 export default function Box({ children, ...props }) {
   return (
-    <table {...includeDataProps(props)} {...props}>
+    <table {...props}>
       <tbody>
         {children}
       </tbody>

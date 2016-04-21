@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import EmailPropTypes from '../PropTypes'
-import includeDataProps from '../includeDataProp'
+import includeDataProps from '../includeDataProps'
 
 export default function A(props) {
   return (
