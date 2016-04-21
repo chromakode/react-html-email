@@ -2,7 +2,7 @@ export default function (props) {
   const dataProps = {}
 
   Object.keys(props).forEach(key => {
-    if (key.indexOf('data-') > -1) {
+    if (/^data-/.test(key)) {
       dataProps[key] = props[key]
     }
   })
