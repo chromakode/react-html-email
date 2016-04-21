@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.0.0 - 2016-04-21
+### Added
+- Data attribute props to components. (@Roilan)
+- `alt` tag prop to `Image` component. (@Roilan)
+- `headCSS` prop to `Email` component to which creates a <style> tag. (@chromakode)
+
 ## 0.2.1 - 2016-01-06
 ### Fixed
 - Fix handling of duplicate background row in CSS support matrix.
