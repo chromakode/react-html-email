@@ -6,7 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Data attribute props to components. (@Roilan)
 - `alt` tag prop to `Image` component. (@Roilan)
-- `headCSS` prop to `Email` component to which creates a <style> tag. (@chromakode)
+- `headCSS` prop to `Email` component to which creates a `<style>` tag. (@chromakode)
 
 ## 0.2.1 - 2016-01-06
 ### Fixed
