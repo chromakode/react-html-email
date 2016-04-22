@@ -16,8 +16,8 @@ export default function Email(props) {
       </head>
       <body style={{
         width: '100%',
-        margin: '0',
-        padding: '0',
+        margin: 0,
+        padding: 0,
         WebkitTextSizeAdjust: '100%',
         MsTextSizeAdjust: '100%',
       }}>
