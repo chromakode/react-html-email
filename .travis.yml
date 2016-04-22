@@ -15,5 +15,5 @@ script:
   - npm run test:cov
 
 after_success:
-  - npm install coveralls
-  - cat ./coverage/lcov.info | $(npm bin)/coveralls
+  - npm install codecov
+  - $(npm bin)/codecov

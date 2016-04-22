@@ -1,7 +1,7 @@
 # react-html-email
 
 [![Build Status](https://img.shields.io/travis/chromakode/react-html-email/master.svg?style=flat-square)](https://travis-ci.org/chromakode/react-html-email)
-[![Coverage Status](https://img.shields.io/coveralls/chromakode/react-html-email/master.svg?style=flat-square)](https://coveralls.io/github/chromakode/react-html-email?branch=master)
+[![Coverage Status](https://img.shields.io/codecov/c/github/chromakode/react-html-email/master.svg?style=flat-square)](https://codecov.io/github/chromakode/react-html-email?branch=master)
 [![npm](https://img.shields.io/npm/v/react-html-email.svg?style=flat-square)](https://www.npmjs.com/package/react-html-email)
 [![npm](https://img.shields.io/npm/l/react-html-email.svg?style=flat-square)](https://github.com/chromakode/react-html-email/blob/master/LICENSE)
 
