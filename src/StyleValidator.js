@@ -1,4 +1,5 @@
 import supportMatrix from './supportMatrix.json'
+import colors from 'colors'
 
 const capsRe = /[A-Z]/g
 
@@ -53,7 +54,7 @@ export default class StyleValidator {
       })
 
       for (const [msg, platforms] of messages) {
-        console.warn(`Warning: Style property \`${propName}\` supplied to \`${componentName}\`, in ${platforms.join(', ')}: ${msg.toLowerCase()}`)  // eslint-disable-line no-console
+        console.warn(colors.yellow(`Warning: Style property \`${propName}\` supplied to \`${componentName}\`, in ${platforms.join(', ')}: ${msg.toLowerCase()}`))  // eslint-disable-line no-console
       }
 
       if (unsupported.length) {
