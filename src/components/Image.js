@@ -19,11 +19,11 @@ Image.propTypes = {
   src: PropTypes.string.isRequired,
   width: PropTypes.oneOfType([
     PropTypes.string,
-    PropTypes.number
+    PropTypes.number,
   ]),
   height: PropTypes.oneOfType([
     PropTypes.string,
-    PropTypes.number
+    PropTypes.number,
   ]),
   style: EmailPropTypes.style,
 }
