@@ -17,7 +17,13 @@ export default function Image(props) {
 Image.propTypes = {
   alt: PropTypes.string.isRequired,
   src: PropTypes.string.isRequired,
-  width: PropTypes.number.isRequired,
-  height: PropTypes.number.isRequired,
+  width: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  height: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
   style: EmailPropTypes.style,
 }
