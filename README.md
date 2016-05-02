@@ -130,7 +130,20 @@ Use to format links. Requires an `href` prop. Always sets `target="_blank"` and 
 
 ### `<Image>`
 
-An image, without any pesky borders, outlines, or underlines by default. Requires a `src` prop, and `width` and `height` to be set. You can override the default styles (such as adding a border) using the `style` prop.
+An image, without any pesky borders, outlines, or underlines by default. Requires a `src` prop. Optional `width` and `height` props are available. You can override the default styles (such as adding a border) using the `style` prop.
+Note: `height` and `width` props default to `1px`. If you need to have a response image, for example, having 300px of height and `auto` width. We recommend adding the number of pixels directly as a prop and having `auto` as a CSS prop.
+
+```js
+const css = `
+ img {
+    width: auto !important;
+ }
+`;
+
+<Email headCSS={css}>
+  <Image src="myimg.png" height={300} />
+</Email>
+```
 
 ## License
 
