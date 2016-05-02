@@ -146,6 +146,12 @@ const css = `
 </Email>
 ```
 
+## Head CSS and Media Queries
+You can pass a string prop `headCSS` to your `<Email>` component. You can see it in our [kitchenSink.js](https://github.com/chromakode/react-html-email/blob/master/examples/kitchenSink.js) example.
+
+## Mailchimp attributes
+If you're using Mailchimp and need to add their custom `mc:edit` attributes to your markup, we recommend using the [mailchimpify](http://github.com/Roilan/mailchimpify) module.
+
 ## License
 
 [MIT](https://github.com/chromakode/react-html-email/blob/master/LICENSE)
