@@ -130,7 +130,21 @@ Use to format links. Requires an `href` prop. Always sets `target="_blank"` and 
 
 ### `<Image>`
 
-An image, without any pesky borders, outlines, or underlines by default. Requires a `src` prop, and `width` and `height` to be set. You can override the default styles (such as adding a border) using the `style` prop.
+An image, without any pesky borders, outlines, or underlines by default. Requires a `src` prop. Optional `width` and `height` props are available. You can override the default styles (such as adding a border) using the `style` prop.
+
+`height` and `width` props default to `1px`. If you require a response image, for example, having `300px` of height and `auto` width. We recommend adding the number of pixels directly as a prop and having `auto` in your `headCSS`.
+
+```js
+const css = `
+  img {
+    width: auto !important;
+  }
+`;
+
+<Email headCSS={css}>
+  <Image src="myimg.png" height={300} />
+</Email>
+```
 
 ## Head CSS and Media Queries
 You can pass a string prop `headCSS` to your `<Email>` component. You can see it in our [kitchenSink.js](https://github.com/chromakode/react-html-email/blob/master/examples/kitchenSink.js) example.
