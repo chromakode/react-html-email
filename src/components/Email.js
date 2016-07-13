@@ -19,11 +19,11 @@ export default function Email(props) {
         margin: 0,
         padding: 0,
         WebkitTextSizeAdjust: '100%',
-        MsTextSizeAdjust: '100%',
+        MsTextSizeAdjust: '100%'
       }}>
         <Box width="100%" height="100%" bgcolor={props.bgcolor}>
-          <Item align="center" valign="top">
-            <Box width="600" align="center" cellPadding={props.cellPadding} cellSpacing={props.cellSpacing} style={props.style}>
+          <Item align={props.align} valign={props.valign}>
+            <Box width={props.width} align="center" cellPadding={props.cellPadding} cellSpacing={props.cellSpacing} style={props.style}>
               {props.children}
             </Box>
           </Item>
@@ -41,4 +41,13 @@ Email.propTypes = {
   style: EmailPropTypes.style,
   headCSS: PropTypes.string,
   children: PropTypes.node,
-}
+  width: PropTypes.string,
+  align: PropTypes.oneOf(['left', 'center', 'right']),
+  valign: PropTypes.oneOf(['top', 'middle', 'bottom'])
+};
+
+Email.defaultProps = {
+  width: '600',
+  align: 'center',
+  valign: 'top'
+};
