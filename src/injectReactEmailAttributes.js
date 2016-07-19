@@ -2,11 +2,11 @@ import { DOMProperty } from 'react/lib/ReactInjection'
 
 export const emailAttributes = {
   Properties: {
-    'xmlns': DOMProperty.MUST_USE_ATTRIBUTE,
-    'align': DOMProperty.MUST_USE_ATTRIBUTE,
-    'valign': DOMProperty.MUST_USE_ATTRIBUTE,
-    'bgcolor': DOMProperty.MUST_USE_ATTRIBUTE,
-    'border': DOMProperty.MUST_USE_ATTRIBUTE,
+    'xmlns': 0,
+    'align': 0,
+    'valign': 0,
+    'bgcolor': 0,
+    'border': 0,
   },
 }
 
