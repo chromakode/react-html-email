@@ -20,6 +20,7 @@ describe('renderEmail', () => {
     const spy = spyOn(console, 'error')
     renderEmail(<A href="#test" style={{ listStylePosition: 'inside' }} />)
     spy.restore()
-    expect(spy).toHaveBeenCalledWith('Warning: Failed propType: Style property `list-style-position` supplied to `A` unsupported in: outlook, outlook-web.')
+    expect(spy.calls.length).toEqual(1)
+    expect(spy.calls[0].arguments[0]).toInclude('Style property `list-style-position` supplied to `A` unsupported in: outlook, outlook-web.')
   })
 })
