@@ -6,6 +6,7 @@ export const emailAttributes = {
     'align': DOMProperty.MUST_USE_ATTRIBUTE,
     'valign': DOMProperty.MUST_USE_ATTRIBUTE,
     'bgcolor': DOMProperty.MUST_USE_ATTRIBUTE,
+    'border': DOMProperty.MUST_USE_ATTRIBUTE,
   },
 }
 
