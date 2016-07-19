@@ -52,11 +52,13 @@ export default class StyleValidator {
         }
       })
 
-      for (const [msg, platforms] of messages) {
-        console.warn(`Warning: Style property \`${propName}\` supplied to \`${componentName}\`, in ${platforms.join(', ')}: ${msg.toLowerCase()}`)  // eslint-disable-line no-console
+      if (this.config.warn) {
+        for (const [msg, platforms] of messages) {
+          console.warn(`Warning: Style property \`${propName}\` supplied to \`${componentName}\`, in ${platforms.join(', ')}: ${msg.toLowerCase()}`)  // eslint-disable-line no-console
+        }
       }
 
-      if (unsupported.length) {
+      if (unsupported.length && this.config.strict) {
         return new Error(`Style property \`${propName}\` supplied to \`${componentName}\` unsupported in: ${unsupported.join(', ')}.`)
       }
     }
