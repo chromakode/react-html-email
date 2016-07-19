@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.1.0 - 2016-07-18
+### Added
+- Disable warnings by default when running with `NODE_ENV=production`. (@chromakode)
+
+### Fixed
+- Fix border attribute being omitted from HTML output. (@chromakode)
+- Fix style validator `strict` and `warn` flags being ignored. (@chromakode)
+
 ## 1.0.2 - 2016-04-21
 ### Fixed
 - Fix minor React warning about numeric CSS string values in `Email` component. (@chromakode)
