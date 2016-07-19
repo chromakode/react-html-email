@@ -4,11 +4,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 1.0.2 - 2016-04-21
 ### Fixed
--  Fix minor React warning about numeric CSS string values in `Email` component. (@chromakode)
+- Fix minor React warning about numeric CSS string values in `Email` component. (@chromakode)
 
 ## 1.0.1 - 2016-04-21
 ### Added
--  Accept React 15 as a peer dependency. (@chromakode)
+- Accept React 15 as a peer dependency. (@chromakode)
 
 ## 1.0.0 - 2016-04-21
 ### Added
