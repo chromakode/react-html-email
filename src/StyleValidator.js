@@ -2,6 +2,13 @@ import supportMatrix from './supportMatrix.json'
 
 const capsRe = /[A-Z]/g
 
+const warningFilename = (file) => {
+  if (!file) return undefined
+
+  const split = file.split('/')
+  return split[split.length - 1]
+}
+
 export default class StyleValidator {
   constructor(config) {
     this.setConfig(config)
@@ -53,7 +60,7 @@ export default class StyleValidator {
       })
 
       for (const [msg, platforms] of messages) {
-        console.warn(`Warning: Style property \`${propName}\` supplied to \`${componentName}\`, in ${platforms.join(', ')}: ${msg.toLowerCase()}`)  // eslint-disable-line no-console
+        console.warn(`Warning in ${warningFilename(module.parent.parent.parent.filename)}: Style property \`${propName}\` supplied to \`${componentName}\`, in ${platforms.join(', ')}: ${msg.toLowerCase()}`)  // eslint-disable-line no-console
       }
 
       if (unsupported.length) {
