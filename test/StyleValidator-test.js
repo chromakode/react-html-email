@@ -22,6 +22,12 @@ describe('StyleValidator', () => {
     expect(result.message).toBe('Style property `list-style-position` supplied to `<Test>` unsupported in: outlook, outlook-web.')
   })
 
+  it('does not return an error when not strict and an unsupported style prop is used', () => {
+    const val = new StyleValidator({ strict: false })
+    const result = val.validate({ listStylePosition: 'inside' }, '<Test>')
+    expect(result).toBe(undefined)
+  })
+
   it('does not return an error when no platforms specified', () => {
     const val = new StyleValidator({ platforms: [] })
     const result = val.validate({ listStylePosition: 'inside' }, '<Test>')
@@ -34,6 +40,15 @@ describe('StyleValidator', () => {
     const result = val.validate({ backgroundSize: '11px' }, '<Test>')
     spy.restore()
     expect(spy).toHaveBeenCalledWith('Warning: Style property `background-size` supplied to `<Test>`, in gmail-android, yahoo-mail: image not stretched')
+    expect(result).toBe(undefined)
+  })
+
+  it('does not output warnings when they are disabled', () => {
+    const val = new StyleValidator({ warn: false, platforms: ['gmail-android', 'yahoo-mail'] })
+    const spy = spyOn(console, 'warn')
+    const result = val.validate({ backgroundSize: '11px' }, '<Test>')
+    spy.restore()
+    expect(spy).toNotHaveBeenCalled()
     expect(result).toBe(undefined)
   })
 

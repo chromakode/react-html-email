@@ -8,6 +8,12 @@ import A from './components/A'
 import injectReactEmailAttributes from './injectReactEmailAttributes'
 import renderEmail from './renderEmail'
 
+const __DEV__ = typeof process !== 'undefined' && process.env && process.env.NODE_ENV !== 'production'
+
+configStyleValidator({
+  warn: __DEV__,
+})
+
 export {
   PropTypes,
   Box,
