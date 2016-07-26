@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.1.1 - 2016-07-25
+### Added
+- Add "width", "align", and "valign" props to the `Email` component. (@laurent-skim-it)
+
 ## 1.1.0 - 2016-07-18
 ### Added
 - Disable warnings by default when running with `NODE_ENV=production`. (@chromakode)
