@@ -1,6 +1,7 @@
 language: node_js
 
 env:
+  - REACT_VERSION=15.3.0
   - REACT_VERSION=15.2.1
   - REACT_VERSION=0.14
 

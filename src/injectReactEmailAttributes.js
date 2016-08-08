@@ -1,4 +1,6 @@
-import { DOMProperty } from 'react/lib/ReactInjection'
+// ensure base DOM properties are already injected
+import 'react-dom'
+import DOMProperty from 'react/lib/DOMProperty'
 
 export const emailAttributes = {
   Properties: {
@@ -17,8 +19,13 @@ export default function injectReactEmailAttributes() {
     return
   }
 
+  if (DOMProperty.properties.hasOwnProperty('xmlns')) {
+    // already exists in React 15.3.0
+    delete emailAttributes.Properties.xmlns
+  }
+
   // make React accept some HTML attributes useful to emails
-  DOMProperty.injectDOMPropertyConfig(emailAttributes)
+  DOMProperty.injection.injectDOMPropertyConfig(emailAttributes)
 
   injected = true
 }
