@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.1.2 - 2016-08-07
+### Fixed
+- Removed failing redundant xmlns injection in React 15.3.0. (@orrybaram + @chromakode)
+- Resolved test warnings in React 15.3.0 due to https://fb.me/react-warning-dont-call-proptypes. (@chromakode)
+
 ## 1.1.1 - 2016-07-25
 ### Added
 - Add "width", "align", and "valign" props to the `Email` component. (@laurent-skim-it)
