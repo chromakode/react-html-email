@@ -1,11 +1,17 @@
 import expect, { spyOn } from 'expect'
 import ReactHTMLEmail from '../src/index'
 
+let ReactPropTypesSecret
+try {
+  // introduced in React 15.3.0
+  ReactPropTypesSecret = require('react/lib/ReactPropTypesSecret')
+} catch (e) { /* ignore missing module failures (older versions of React) */ }
+
 describe('ReactHTMLEmail', () => {
   describe('PropTypes.style', () => {
     it('returns an error for non-objects', () => {
       const style = 1
-      const result = ReactHTMLEmail.PropTypes.style({ style }, 'style', '<Test>')
+      const result = ReactHTMLEmail.PropTypes.style({ style }, 'style', '<Test>', null, null, ReactPropTypesSecret)
       expect(result instanceof Error).toBe(true)
       expect(result.message).toBe('Invalid undefined `style` of type `number` supplied to `<Test>`, expected `object`.')
     })
@@ -13,7 +19,7 @@ describe('ReactHTMLEmail', () => {
     it('validates style objects', () => {
       const spy = spyOn(ReactHTMLEmail.__styleValidator, 'validate')
       const style = { listStylePosition: '11px' }
-      ReactHTMLEmail.PropTypes.style({ style }, 'style', '<Test>')
+      ReactHTMLEmail.PropTypes.style({ style }, 'style', '<Test>', null, null, ReactPropTypesSecret)
       expect(spy).toHaveBeenCalledWith(style, '<Test>')
       spy.restore()
     })

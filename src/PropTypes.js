@@ -8,8 +8,8 @@ export function configStyleValidator(config) {
 }
 
 export default {
-  style(props, propName, componentName) {
-    const objErr = React.PropTypes.object(props, propName, componentName)
+  style(props, propName, componentName, ...rest) {
+    const objErr = React.PropTypes.object(props, propName, componentName, ...rest)
     if (objErr) {
       return objErr
     }
