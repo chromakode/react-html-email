@@ -5,7 +5,7 @@ import includeDataProps from '../includeDataProps'
 export default function Items(props) {
   return (
     <tr>
-      {Children.map(children, child => (
+      {Children.map(props.children, child => (
         <td {...includeDataProps(props)} align={props.align} valign={props.valign} bgcolor={props.bgcolor} style={props.style}>
             {child}
         </td>
