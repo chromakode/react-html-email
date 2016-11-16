@@ -1,5 +1,5 @@
 import expect, { spyOn } from 'expect'
-import { DOMProperty } from 'react/lib/ReactInjection'
+import { DOMProperty } from 'react-dom/lib/ReactInjection'
 
 const modulePath = require.resolve('../src/injectReactEmailAttributes')
 
