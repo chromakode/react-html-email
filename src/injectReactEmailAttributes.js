@@ -1,6 +1,6 @@
 // ensure base DOM properties are already injected
 import 'react-dom'
-import DOMProperty from 'react/lib/DOMProperty'
+import DOMProperty from 'react-dom/lib/DOMProperty'
 
 export const emailAttributes = {
   Properties: {
