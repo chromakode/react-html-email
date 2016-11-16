@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.1.3 - 2016-11-16
+### Fixed
+- Fix unstable import path compatibility with React 15.4.0. (@ryanscottaudio + @chromakode)
+
 ## 1.1.2 - 2016-08-07
 ### Fixed
 - Removed failing redundant xmlns injection in React 15.3.0. (@orrybaram + @chromakode)
