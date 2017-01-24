@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.2.0 - 2017-01-23
+### Added
+- Add bodyStyle prop to Email component. (@lulalachen)
+
 ## 1.1.3 - 2016-11-16
 ### Fixed
 - Fix unstable import path compatibility with React 15.4.0. (@ryanscottaudio + @chromakode)
