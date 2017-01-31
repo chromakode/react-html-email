@@ -3,6 +3,8 @@ import Box from './components/Box'
 import Email from './components/Email'
 import Image from './components/Image'
 import Item from './components/Item'
+import Row from './components/Row'
+import Col from './components/Col'
 import Span from './components/Span'
 import A from './components/A'
 import injectReactEmailAttributes from './injectReactEmailAttributes'
@@ -20,6 +22,8 @@ export {
   Email,
   Image,
   Item,
+  Row,
+  Col,
   Span,
   A,
   injectReactEmailAttributes,
