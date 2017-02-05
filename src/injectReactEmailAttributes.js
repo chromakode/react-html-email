@@ -6,7 +6,9 @@ let DOMProperty
 try {
   DOMProperty = require('react-dom/lib/DOMProperty')
 } catch (e) {
+  /* Fix compilation error
   DOMProperty = require('react/lib/DOMProperty')
+  */
 }
 
 export { DOMProperty as _DOMProperty }
