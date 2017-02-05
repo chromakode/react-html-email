@@ -1,6 +1,15 @@
 // ensure base DOM properties are already injected
 import 'react-dom'
-import DOMProperty from 'react/lib/DOMProperty'
+
+// FIXME: implement without relying on unstable import locations
+let DOMProperty
+try {
+  DOMProperty = require('react-dom/lib/DOMProperty')
+} catch (e) {
+  DOMProperty = require('react/lib/DOMProperty')
+}
+
+export { DOMProperty as _DOMProperty }
 
 export const emailAttributes = {
   Properties: {
