@@ -13,7 +13,6 @@ export { DOMProperty as _DOMProperty }
 
 export const emailAttributes = {
   Properties: {
-    'xmlns': 0,
     'align': 0,
     'valign': 0,
     'bgcolor': 0,
