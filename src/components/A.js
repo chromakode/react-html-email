@@ -4,7 +4,7 @@ import includeDataProps from '../includeDataProps'
 
 export default function A(props) {
   return (
-    <a {...includeDataProps(props)} href={props.href} target="_blank" style={{
+    <a {...includeDataProps(props)} download={props.download} href={props.href} target="_blank" style={{
       color: props.color,
       textDecoration: props.textDecoration,
       ...props.style,
@@ -14,6 +14,7 @@ export default function A(props) {
 
 A.propTypes = {
   href: PropTypes.string.isRequired,
+  download: PropTypes.string,
   color: PropTypes.string,
   textDecoration: PropTypes.string,
   style: EmailPropTypes.style,
