@@ -13,7 +13,7 @@ describe('ReactHTMLEmail', () => {
       const style = 1
       const result = ReactHTMLEmail.PropTypes.style({ style }, 'style', '<Test>', null, null, ReactPropTypesSecret)
       expect(result instanceof Error).toBe(true)
-      expect(result.message).toBe('Invalid undefined `style` of type `number` supplied to `<Test>`, expected `object`.')
+      expect(result.message).toBe('Invalid null `style` of type `number` supplied to `<Test>`, expected `object`.')
     })
 
     it('validates style objects', () => {
