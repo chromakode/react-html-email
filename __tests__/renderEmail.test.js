@@ -1,12 +1,15 @@
-import expect, { spyOn } from 'expect'
-import injectReactEmailAttributes from '../src/injectReactEmailAttributes'
-import renderEmail from '../src/renderEmail'
 import kitchenSink from '../examples/kitchenSink'
 import React from 'react'
 import { A } from '../src/index'
 
 describe('renderEmail', () => {
-  before(() => {
+  let renderEmail
+
+  beforeEach(() => {
+    jest.restoreAllMocks()
+    jest.resetModules()
+    renderEmail = require('../src/renderEmail').default
+    const injectReactEmailAttributes = require('../src/injectReactEmailAttributes').default
     injectReactEmailAttributes()
   })
 
@@ -21,8 +24,7 @@ describe('renderEmail', () => {
     const actualOutput = renderEmail(<A href="#test" style={{ listStylePosition: 'inside' }} />)
     const expectedOutput = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><a href="#test" target="_blank" style="text-decoration:underline;list-style-position:inside;"></a>'
     expect(actualOutput).toBe(expectedOutput)
-    spy.restore()
-    expect(spy.calls.length).toEqual(1)
-    expect(spy.calls[0].arguments[0]).toInclude('Style property `list-style-position` supplied to `A` unsupported in: outlook, outlook-web.')
+    expect(spy).toHaveBeenCalled()
+    expect(spy).toHaveBeenCalledWith('Warning: Failed prop type: Style property `list-style-position` supplied to `A` unsupported in: outlook, outlook-web.\n    in A')
   })
 })

@@ -1,36 +1,29 @@
-import expect, { spyOn } from 'expect'
-import { _DOMProperty as DOMProperty } from '../src/injectReactEmailAttributes'
-
-const modulePath = require.resolve('../src/injectReactEmailAttributes')
-
 describe('injectReactEmailAttributes', () => {
-  let origModule
-  let module
+  let DOMProperty
   let injectReactEmailAttributes
   let emailAttributes
-  before(() => {
-    origModule = require.cache[modulePath]
-    delete require.cache[modulePath]
-    module = require('../src/injectReactEmailAttributes')
+
+  beforeAll(() => {
+    jest.resetModules()
+    const module = require('../src/injectReactEmailAttributes')
+    DOMProperty = module._DOMProperty
     injectReactEmailAttributes = module.default
     emailAttributes = module.emailAttributes
+  })
+
+  beforeEach(() => {
+    jest.restoreAllMocks()
   })
 
   it('injects email properties on first run', () => {
     const spy = spyOn(DOMProperty.injection, 'injectDOMPropertyConfig')
     injectReactEmailAttributes()
     expect(spy).toHaveBeenCalledWith(emailAttributes)
-    spy.restore()
   })
 
   it('no-ops on second run', () => {
     const spy = spyOn(DOMProperty.injection, 'injectDOMPropertyConfig')
     injectReactEmailAttributes()
-    expect(spy.calls.length).toBe(0)
-    spy.restore()
-  })
-
-  after(() => {
-    require.cache[modulePath] = origModule
+    expect(spy).not.toHaveBeenCalled()
   })
 })
