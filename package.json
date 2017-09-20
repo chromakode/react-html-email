@@ -18,7 +18,7 @@
     "test:cov": "babel-node $(npm bin)/isparta cover node_modules/mocha/bin/_mocha",
     "compile": "babel -d lib/ src/ && cp -v src/supportMatrix.json lib/",
     "scrape": "babel-node scripts/scrapeStyleSupport.js > src/supportMatrix.json",
-    "prepublish": "npm run compile"
+    "prepare": "npm run compile"
   },
   "main": "lib/index.js",
   "repository": "chromakode/react-html-email",
