@@ -25,6 +25,7 @@ describe('renderEmail', () => {
     const expectedOutput = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><a href="#test" target="_blank" style="text-decoration:underline;list-style-position:inside;"></a>'
     expect(actualOutput).toBe(expectedOutput)
     expect(spy).toHaveBeenCalled()
-    expect(spy).toHaveBeenCalledWith('Warning: Failed prop type: Style property `list-style-position` supplied to `A` unsupported in: outlook, outlook-web.\n    in A')
+    // The exact content of this message varies between React 0.14.9 and 15.6.1
+    expect(spy.calls.argsFor(0)[0]).toContain('Style property `list-style-position` supplied to `A` unsupported in: outlook, outlook-web.')
   })
 })
