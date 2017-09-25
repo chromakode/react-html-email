@@ -4,5 +4,6 @@ src/
 __tests__/
 coverage/
 .babelrc
+.eslintignore
 .eslintrc
 .travis.yml
