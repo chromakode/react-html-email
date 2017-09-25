@@ -27,7 +27,9 @@ describe('StyleValidator', () => {
 
   it('does not return an error when not strict and an unsupported style prop is used', () => {
     const val = new StyleValidator({ strict: false })
-    const result = val.validate({ listStylePosition: 'inside' }, '<Test>')
+    const spy = jest.spyOn(console, 'warn').mockImplementation()
+    const result = val.validate({ a: 'test', listStylePosition: 'inside', backgroundSize: '11px' }, '<Test>')
+    expect(spy).toHaveBeenCalledWith('Warning: Style property `background-size` supplied to `<Test>`, in gmail-android, yahoo-mail: image not stretched')
     expect(result).toBe(undefined)
   })
 

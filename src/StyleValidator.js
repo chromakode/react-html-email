@@ -36,7 +36,7 @@ export default class StyleValidator {
         if (this.config.strict) {
           return new Error(`Unknown style property \`${propName}\` supplied to \`${componentName}\`.`)
         }
-        return undefined
+        continue
       }
 
       const unsupported = []
