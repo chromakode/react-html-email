@@ -1,7 +1,7 @@
 examples/
 scripts/
 src/
-test/
+__tests__/
 coverage/
 .babelrc
 .eslintrc
