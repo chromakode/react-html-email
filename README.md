@@ -18,7 +18,7 @@ Modern HTML emails are a tangle of archaic HTML and inline styles. This library 
 Import the library and set up React:
 
 ```js
-import {injectReactEmailAttributes} from 'react-html-email'
+import { injectReactEmailAttributes } from 'react-html-email'
 
 // set up React to support a few HTML attributes useful for legacy clients
 injectReactEmailAttributes()
