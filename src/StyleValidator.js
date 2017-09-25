@@ -36,32 +36,31 @@ export default class StyleValidator {
         if (this.config.strict) {
           return new Error(`Unknown style property \`${propName}\` supplied to \`${componentName}\`.`)
         }
-        continue
-      }
-
-      const unsupported = []
-      const messages = new Map()
-      this.config.platforms.forEach((platform) => {
-        if (typeof supportInfo[platform] === 'string') {
-          const msg = supportInfo[platform]
-          if (!messages.has(msg)) {
-            messages.set(msg, [])
+      } else {
+        const unsupported = []
+        const messages = new Map()
+        this.config.platforms.forEach((platform) => {
+          if (typeof supportInfo[platform] === 'string') {
+            const msg = supportInfo[platform]
+            if (!messages.has(msg)) {
+              messages.set(msg, [])
+            }
+            messages.get(msg).push(platform)
+          } else if (supportInfo[platform] === false) {
+            unsupported.push(platform)
           }
-          messages.get(msg).push(platform)
-        } else if (supportInfo[platform] === false) {
-          unsupported.push(platform)
-        }
-      })
+        })
 
-      if (this.config.warn) {
-        // eslint-disable-next-line no-restricted-syntax
-        for (const [msg, platforms] of messages) {
-          console.warn(`Warning: Style property \`${propName}\` supplied to \`${componentName}\`, in ${platforms.join(', ')}: ${msg.toLowerCase()}`) // eslint-disable-line no-console
+        if (this.config.warn) {
+          // eslint-disable-next-line no-restricted-syntax
+          for (const [msg, platforms] of messages) {
+            console.warn(`Warning: Style property \`${propName}\` supplied to \`${componentName}\`, in ${platforms.join(', ')}: ${msg.toLowerCase()}`) // eslint-disable-line no-console
+          }
         }
-      }
 
-      if (unsupported.length && this.config.strict) {
-        return new Error(`Style property \`${propName}\` supplied to \`${componentName}\` unsupported in: ${unsupported.join(', ')}.`)
+        if (unsupported.length && this.config.strict) {
+          return new Error(`Style property \`${propName}\` supplied to \`${componentName}\` unsupported in: ${unsupported.join(', ')}.`)
+        }
       }
     }
     return undefined
