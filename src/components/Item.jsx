@@ -6,7 +6,14 @@ import includeDataProps from '../includeDataProps'
 export default function Item(props) {
   return (
     <tr>
-      <td {...includeDataProps(props)} className={props.className} align={props.align} valign={props.valign} bgcolor={props.bgcolor} style={props.style}>
+      <td
+        {...includeDataProps(props)}
+        className={props.className}
+        align={props.align}
+        valign={props.valign}
+        bgcolor={props.bgcolor}
+        style={props.style}
+      >
         {props.children}
       </td>
     </tr>
@@ -20,4 +27,13 @@ Item.propTypes = {
   valign: PropTypes.oneOf(['top', 'middle', 'bottom']),
   style: EmailPropTypes.style,
   children: PropTypes.node,
+}
+
+Item.defaultProps = {
+  className: undefined,
+  bgcolor: undefined,
+  align: undefined,
+  valign: undefined,
+  style: undefined,
+  children: undefined,
 }

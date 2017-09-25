@@ -2,14 +2,14 @@
 import 'react-dom'
 import DOMProperty from 'react-dom/lib/DOMProperty'
 
-export { DOMProperty as _DOMProperty }
+export { DOMProperty }
 
 export const emailAttributes = {
   Properties: {
-    'align': 0,
-    'valign': 0,
-    'bgcolor': 0,
-    'border': 0,
+    align: 0,
+    valign: 0,
+    bgcolor: 0,
+    border: 0,
   },
 }
 

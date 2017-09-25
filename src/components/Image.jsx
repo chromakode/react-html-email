@@ -5,13 +5,20 @@ import includeDataProps from '../includeDataProps'
 
 export default function Image(props) {
   return (
-    <img {...includeDataProps(props)} alt={props.alt} src={props.src} width={props.width} height={props.height} style={{
-      display: 'block',
-      outline: 'none',
-      border: 'none',
-      textDecoration: 'none',
-      ...props.style,
-    }}/>
+    <img
+      {...includeDataProps(props)}
+      alt={props.alt}
+      src={props.src}
+      width={props.width}
+      height={props.height}
+      style={{
+        display: 'block',
+        outline: 'none',
+        border: 'none',
+        textDecoration: 'none',
+        ...props.style,
+      }}
+    />
   )
 }
 
@@ -21,4 +28,8 @@ Image.propTypes = {
   width: PropTypes.number.isRequired,
   height: PropTypes.number.isRequired,
   style: EmailPropTypes.style,
+}
+
+Image.defaultProps = {
+  style: undefined,
 }

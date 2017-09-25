@@ -31,4 +31,9 @@ Box.defaultProps = {
   border: '0',
   align: 'left',
   valign: 'top',
+  bgcolor: undefined,
+  width: undefined,
+  height: undefined,
+  style: undefined,
+  children: undefined,
 }

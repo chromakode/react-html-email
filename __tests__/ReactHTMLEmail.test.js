@@ -11,7 +11,7 @@ describe('ReactHTMLEmail', () => {
 
   describe('PropTypes.style', () => {
     it('returns an error for non-objects', () => {
-      const spy = spyOn(console, 'error')
+      const spy = jest.spyOn(console, 'error').mockImplementation()
       const style = 1
       checkPropTypes(module.PropTypes, { style }, 'style', 'Test')
       expect(spy).toHaveBeenCalled()
@@ -19,7 +19,7 @@ describe('ReactHTMLEmail', () => {
     })
 
     it('validates style objects', () => {
-      const spy = spyOn(module.default.__styleValidator, 'validate')
+      const spy = jest.spyOn(module.default.styleValidator, 'validate').mockImplementation()
       const style = { listStylePosition: '11px' }
       checkPropTypes(module.PropTypes, { style }, 'style', 'Test')
       expect(spy).toHaveBeenCalledWith(style, 'Test')
@@ -27,12 +27,8 @@ describe('ReactHTMLEmail', () => {
   })
 
   describe('configStyleValidator', () => {
-    beforeEach(() => {
-      const module = require('../src/index')
-    })
-
     it('updates StyleValidator config', () => {
-      const spy = spyOn(module.default.__styleValidator, 'setConfig')
+      const spy = jest.spyOn(module.default.styleValidator, 'setConfig').mockImplementation()
       const config = { strict: false }
       module.configStyleValidator(config)
       expect(spy).toHaveBeenCalledWith(config)
@@ -48,7 +44,7 @@ describe('ReactHTMLEmail', () => {
     })
 
     it('disables warnings', () => {
-      expect(module.default.__styleValidator.config.warn).toEqual(false)
+      expect(module.default.styleValidator.config.warn).toEqual(false)
     })
 
     afterAll(() => {

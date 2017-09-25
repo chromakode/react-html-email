@@ -1,4 +1,4 @@
-import PropTypes, { configStyleValidator, __styleValidator } from './PropTypes'
+import PropTypes, { configStyleValidator, styleValidator } from './PropTypes'
 import Box from './components/Box'
 import Email from './components/Email'
 import Image from './components/Image'
@@ -8,10 +8,10 @@ import A from './components/A'
 import injectReactEmailAttributes from './injectReactEmailAttributes'
 import renderEmail from './renderEmail'
 
-const __DEV__ = typeof process !== 'undefined' && process.env && process.env.NODE_ENV !== 'production'
+const DEV = typeof process !== 'undefined' && process.env && process.env.NODE_ENV !== 'production'
 
 configStyleValidator({
-  warn: __DEV__,
+  warn: DEV,
 })
 
 export {
@@ -32,5 +32,5 @@ export default {
   injectReactEmailAttributes,
   configStyleValidator,
   renderEmail,
-  __styleValidator,
+  styleValidator,
 }

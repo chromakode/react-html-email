@@ -5,11 +5,19 @@ import includeDataProps from '../includeDataProps'
 
 export default function A(props) {
   return (
-    <a {...includeDataProps(props)} download={props.download} href={props.href} target="_blank" style={{
-      color: props.color,
-      textDecoration: props.textDecoration,
-      ...props.style,
-    }}>{props.children}</a>
+    <a
+      {...includeDataProps(props)}
+      download={props.download}
+      href={props.href}
+      target="_blank"
+      style={{
+        color: props.color,
+        textDecoration: props.textDecoration,
+        ...props.style,
+      }}
+    >
+      {props.children}
+    </a>
   )
 }
 
@@ -24,4 +32,9 @@ A.propTypes = {
 
 A.defaultProps = {
   textDecoration: 'underline',
+  href: undefined,
+  download: undefined,
+  color: undefined,
+  style: undefined,
+  children: undefined,
 }

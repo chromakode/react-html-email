@@ -26,8 +26,9 @@ export default class StyleValidator {
   }
 
   validate(style, componentName) {
-    for (const propNameCamelCase in style) {  // eslint-disable-line guard-for-in
-      const propName = propNameCamelCase.replace(capsRe, match => '-' + match[0].toLowerCase())
+    // eslint-disable-next-line no-restricted-syntax
+    for (const propNameCamelCase of Object.keys(style)) {
+      const propName = propNameCamelCase.replace(capsRe, match => `-${match[0].toLowerCase()}`)
 
       const supportInfo = supportMatrix[propName]
 
@@ -40,7 +41,7 @@ export default class StyleValidator {
 
       const unsupported = []
       const messages = new Map()
-      this.config.platforms.forEach(platform => {
+      this.config.platforms.forEach((platform) => {
         if (typeof supportInfo[platform] === 'string') {
           const msg = supportInfo[platform]
           if (!messages.has(msg)) {
@@ -53,8 +54,9 @@ export default class StyleValidator {
       })
 
       if (this.config.warn) {
+        // eslint-disable-next-line no-restricted-syntax
         for (const [msg, platforms] of messages) {
-          console.warn(`Warning: Style property \`${propName}\` supplied to \`${componentName}\`, in ${platforms.join(', ')}: ${msg.toLowerCase()}`)  // eslint-disable-line no-console
+          console.warn(`Warning: Style property \`${propName}\` supplied to \`${componentName}\`, in ${platforms.join(', ')}: ${msg.toLowerCase()}`) // eslint-disable-line no-console
         }
       }
 
@@ -62,5 +64,6 @@ export default class StyleValidator {
         return new Error(`Style property \`${propName}\` supplied to \`${componentName}\` unsupported in: ${unsupported.join(', ')}.`)
       }
     }
+    return undefined
   }
 }
