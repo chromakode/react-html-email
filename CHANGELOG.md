@@ -2,8 +2,19 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## 1.2.0 - 2017-01-23
+## 2.0.0 - 2017-09-24
 ### Added
+- Add "download" prop to the `A` component. (@joewescott)
+
+### Changed
+- React > 15.4.0 is required. This allows removal of the fallback import to `react/lib/DOMProperty` which caused problems with Webpack compilation. (@chromakode)
+- `Email` component now defaults to including a `lang="en"` attribute. (@chromakode)
+- Use standalone prop-types package. (@taylorwinfield)
+
+### Fixed
+- Bug where compatibility notes for CSS properties might not be warned if an unknown property was used. (@chromakode)
+
+## 1.2.0 - 2017-01-23
 - Add bodyStyle prop to Email component. (@lulalachen)
 
 ## 1.1.3 - 2016-11-16
