@@ -8,7 +8,7 @@ node_js:
   - "6"
   - "8"
 
-before_install:
+after_install:
   - npm install react@$REACT_VERSION react-dom@$REACT_VERSION
 
 script:
