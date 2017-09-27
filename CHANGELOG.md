@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.0.1 - 2017-09-26
+### Fixed
+- Remove old React 0.14.X peer dependency. (@chromakode)
+
 ## 2.0.0 - 2017-09-24
 ### Added
 - Add "download" prop to the `A` component. (@joewescott)
