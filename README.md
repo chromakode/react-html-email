@@ -15,15 +15,6 @@ Modern HTML emails are a tangle of archaic HTML and inline styles. This library 
 
 ## Usage
 
-Import the library and set up React:
-
-```js
-import { injectReactEmailAttributes } from 'react-html-email'
-
-// set up React to support a few HTML attributes useful for legacy clients
-injectReactEmailAttributes()
-```
-
 To render a simple email:
 
 ```js
@@ -49,10 +40,6 @@ You can find more examples in the [examples directory](https://github.com/chroma
 ### `renderEmail(emailComponent)`
 
 Render an email component to an HTML string. Adds an XHTML 1.0 Strict doctype, as per [HTML Email Boilerplate](https://github.com/seanpowell/Email-Boilerplate).
-
-### `injectReactEmailAttributes()`
-
-React ignores some attributes we need, such as the table `align` and `valign` properties. Call this function to expand React's attribute repertoire before using email components from the library.
 
 ### `configStyleValidator(config)`
 
