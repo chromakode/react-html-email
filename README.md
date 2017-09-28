@@ -98,7 +98,7 @@ Use to assign styles to text.
 It can be handy to create an object containing your default text styles for reuse. For example:
 
 ```js
-const textStyles = {
+const textDefaults = {
   fontFamily: 'Verdana',
   fontSize: 42,
   fontWeight: 'bold',
