@@ -23,6 +23,7 @@
   "main": "lib/index.js",
   "repository": "chromakode/react-html-email",
   "devDependencies": {
+    "@types/react": "^16.0.25",
     "babel-cli": "~6.26.0",
     "babel-eslint": "~8.0.0",
     "babel-jest": "^21.0.2",
