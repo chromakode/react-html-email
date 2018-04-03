@@ -122,6 +122,17 @@ An image, without any pesky borders, outlines, or underlines by default. Require
 ## Head CSS and Media Queries
 You can pass a string prop `headCSS` to your `<Email>` component. You can see it in our [kitchenSink.jsx](https://github.com/chromakode/react-html-email/blob/master/examples/kitchenSink.jsx) example.
 
+## Head Tags
+You can pass a react node prop `headTags` to your `<Email>` component if you want to append more tags to the head element. (for example, if you want to add a custom font-family):
+
+```
+<Email 
+  title={title}  
+  headCSS={css}
+  headTags={<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,500" rel="stylesheet"/>}
+> 
+```
+
 ## Mailchimp attributes
 If you're using Mailchimp and need to add their custom `mc:edit` attributes to your markup, we recommend using the [mailchimpify](http://github.com/Roilan/mailchimpify) module.
 
