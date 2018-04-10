@@ -8,7 +8,7 @@ export function configStyleValidator(config) {
 }
 
 export default {
-  style(props, propName, componentName, ...rest) {
+  style: function style(props, propName, componentName, ...rest) {
     if (props[propName] == null) {
       return undefined
     }
