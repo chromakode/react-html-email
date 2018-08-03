@@ -1,32 +1,34 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import EmailPropTypes from '../PropTypes'
 import includeDataProps from '../includeDataProps'
 
-export default function Col(props) {
+export default function Row(props) {
   return (
-    <td {...includeDataProps(props)}
+    <tr
+      {...includeDataProps(props)}
       className={props.className}
       align={props.align}
       valign={props.valign}
       bgcolor={props.bgcolor}
-      colSpan={props.colSpan}
-      style={props.style}>
+      style={props.style}
+    >
       {props.children}
-    </td>
+    </tr>
   )
 }
 
-Col.propTypes = {
+Row.propTypes = {
   className: PropTypes.string,
   bgcolor: PropTypes.string,
-  colSpan: PropTypes.number,
   align: PropTypes.oneOf(['left', 'center', 'right']),
   valign: PropTypes.oneOf(['top', 'middle', 'bottom']),
   style: EmailPropTypes.style,
   children: PropTypes.node,
 }
 
-Col.defaultProps = {
+Row.defaultProps = {
+  children: null,
   className: null,
   bgcolor: null,
   align: 'center',

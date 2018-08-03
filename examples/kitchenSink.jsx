@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Email, Image, Item, Span, A } from '../src/index'
+import { Box, Email, Image, Item, Span, A, Row, Col } from '../src/index'
 
 const css = `
 @media only screen and (max-device-width: 480px) {
@@ -21,6 +21,12 @@ const email = (
           <A download={sourceURL} href={sourceURL}>Source code</A>
         </Item>
       </Box>
+    </Item>
+    <Item>
+      <Row>
+        <Col>Column1</Col>
+        <Col>Column2</Col>
+      </Row>
     </Item>
   </Email>
 )
