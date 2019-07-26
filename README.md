@@ -15,15 +15,6 @@ Modern HTML emails are a tangle of archaic HTML and inline styles. This library 
 
 ## Usage
 
-Import the library and set up React:
-
-```js
-import ReactHTMLEmail from 'react-html-email'
-
-// set up React to support a few HTML attributes useful for legacy clients
-ReactHTMLEmail.injectReactEmailAttributes()
-```
-
 To render a simple email:
 
 ```js
@@ -49,10 +40,6 @@ You can find more examples in the [examples directory](https://github.com/chroma
 ### `renderEmail(emailComponent)`
 
 Render an email component to an HTML string. Adds an XHTML 1.0 Strict doctype, as per [HTML Email Boilerplate](https://github.com/seanpowell/Email-Boilerplate).
-
-### `injectReactEmailAttributes()`
-
-React ignores some attributes we need, such as the table `align` and `valign` properties. Call this function to expand React's attribute repertoire before using email components from the library.
 
 ### `configStyleValidator(config)`
 
@@ -111,7 +98,7 @@ Use to assign styles to text.
 It can be handy to create an object containing your default text styles for reuse. For example:
 
 ```js
-const textStyles = {
+const textDefaults = {
   fontFamily: 'Verdana',
   fontSize: 42,
   fontWeight: 'bold',
@@ -133,7 +120,7 @@ Use to format links. Requires an `href` prop. Always sets `target="_blank"` and 
 An image, without any pesky borders, outlines, or underlines by default. Requires a `src` prop, and `width` and `height` to be set. You can override the default styles (such as adding a border) using the `style` prop.
 
 ## Head CSS and Media Queries
-You can pass a string prop `headCSS` to your `<Email>` component. You can see it in our [kitchenSink.js](https://github.com/chromakode/react-html-email/blob/master/examples/kitchenSink.js) example.
+You can pass a string prop `headCSS` to your `<Email>` component. You can see it in our [kitchenSink.jsx](https://github.com/chromakode/react-html-email/blob/master/examples/kitchenSink.jsx) example.
 
 ## Mailchimp attributes
 If you're using Mailchimp and need to add their custom `mc:edit` attributes to your markup, we recommend using the [mailchimpify](http://github.com/Roilan/mailchimpify) module.

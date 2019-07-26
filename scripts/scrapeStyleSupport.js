@@ -16,7 +16,7 @@ function scrapeProperties(html) {
     'Android 4 (Gmail) +': 'gmail-android',
   }
   const columnTitles = $('#clients td').map((idx, el) => $(el).text()).get()
-  const columns = columnTitles.map(title => {
+  const columns = columnTitles.map((title) => {
     const col = columnMap[title]
     if (!col) {
       throw new Error('Unexpected table column encountered. Scraper out of date?')
@@ -53,7 +53,7 @@ function scrapeProperties(html) {
       return
     }
 
-    if (props.hasOwnProperty(propName)) {
+    if (Object.prototype.hasOwnProperty.call(props, propName)) {
       if (propName === 'background') {
         // skip "CSS3" background property
         return
@@ -62,9 +62,9 @@ function scrapeProperties(html) {
     }
 
     if (propName === 'border' || propName === 'padding' || propName === 'margin') {
-      ['-left', '-right', '-top', '-bottom'].forEach(suffix =>
+      ['-left', '-right', '-top', '-bottom'].forEach((suffix) => {
         props[propName + suffix] = data
-      )
+      })
     }
 
     props[propName] = data
@@ -78,12 +78,12 @@ function scrapeProperties(html) {
 
 fetch('https://www.campaignmonitor.com/css/')
   .then(res => res.text())
-  .then(body => {
+  .then((body) => {
     const props = scrapeProperties(body)
     const propsJSON = JSON.stringify(props)
     process.stdout.write(propsJSON)
   })
-  .catch(err => {
-    console.error(err)  // eslint-disable-line no-console
+  .catch((err) => {
+    console.error(err) // eslint-disable-line no-console
     process.exit(1)
   })

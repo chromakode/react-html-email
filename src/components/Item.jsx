@@ -1,11 +1,20 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import EmailPropTypes from '../PropTypes'
 import includeDataProps from '../includeDataProps'
 
 export default function Item(props) {
   return (
     <tr>
-      <td {...includeDataProps(props)} className={props.className} align={props.align} valign={props.valign} bgcolor={props.bgcolor} style={props.style} dir={props.dir}>
+      <td
+        {...includeDataProps(props)}
+        className={props.className}
+        align={props.align}
+        valign={props.valign}
+        bgcolor={props.bgcolor}
+        style={props.style}
+        dir={props.dir}
+      >
         {props.children}
       </td>
     </tr>
@@ -20,4 +29,13 @@ Item.propTypes = {
   style: EmailPropTypes.style,
   dir: PropTypes.oneOf(['ltr','rtl']),
   children: PropTypes.node,
+}
+
+Item.defaultProps = {
+  className: undefined,
+  bgcolor: undefined,
+  align: undefined,
+  valign: undefined,
+  style: undefined,
+  children: undefined,
 }

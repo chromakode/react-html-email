@@ -2,8 +2,28 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## 1.2.0 - 2017-01-23
+## 3.0.0 - 2017-09-26
+### Changed
+- React 16.0.0 compatibility. (@chromakode)
+- NOTE: React 16 is generating camel-cased `cellSpacing` and `cellPadding` attributes. This should (in theory) have a negligible effect on rendering since HTML attribute names are case-insensitive. See https://github.com/facebook/react/issues/10863.
+
+## 2.0.1 - 2017-09-26
+### Fixed
+- Remove old React 0.14.X peer dependency. (@chromakode)
+
+## 2.0.0 - 2017-09-24
 ### Added
+- Add "download" prop to the `A` component. (@joewescott)
+
+### Changed
+- React > 15.4.0 is required. This allows removal of the fallback import to `react/lib/DOMProperty` which caused problems with Webpack compilation. (@chromakode)
+- `Email` component now defaults to including a `lang="en"` attribute. (@chromakode)
+- Use standalone prop-types package. (@taylorwinfield)
+
+### Fixed
+- Bug where compatibility notes for CSS properties might not be warned if an unknown property was used. (@chromakode)
+
+## 1.2.0 - 2017-01-23
 - Add bodyStyle prop to Email component. (@lulalachen)
 
 ## 1.1.3 - 2016-11-16

@@ -1,7 +1,10 @@
-import expect, { spyOn } from 'expect'
 import StyleValidator from '../src/StyleValidator'
 
 describe('StyleValidator', () => {
+  beforeEach(() => {
+    jest.restoreAllMocks()
+  })
+
   it('returns an error when strict and an unknown style prop is used', () => {
     const val = new StyleValidator()
     const result = val.validate({ transform: 'scale(2)' }, '<Test>')
@@ -24,7 +27,9 @@ describe('StyleValidator', () => {
 
   it('does not return an error when not strict and an unsupported style prop is used', () => {
     const val = new StyleValidator({ strict: false })
-    const result = val.validate({ listStylePosition: 'inside' }, '<Test>')
+    const spy = jest.spyOn(console, 'warn').mockImplementation()
+    const result = val.validate({ a: 'test', listStylePosition: 'inside', backgroundSize: '11px' }, '<Test>')
+    expect(spy).toHaveBeenCalledWith('Warning: Style property `background-size` supplied to `<Test>`, in gmail-android, yahoo-mail: image not stretched')
     expect(result).toBe(undefined)
   })
 
@@ -36,19 +41,17 @@ describe('StyleValidator', () => {
 
   it('does not return an error on a known property, but warns with comments', () => {
     const val = new StyleValidator({ platforms: ['gmail-android', 'yahoo-mail'] })
-    const spy = spyOn(console, 'warn')
+    const spy = jest.spyOn(console, 'warn').mockImplementation()
     const result = val.validate({ backgroundSize: '11px' }, '<Test>')
-    spy.restore()
     expect(spy).toHaveBeenCalledWith('Warning: Style property `background-size` supplied to `<Test>`, in gmail-android, yahoo-mail: image not stretched')
     expect(result).toBe(undefined)
   })
 
   it('does not output warnings when they are disabled', () => {
     const val = new StyleValidator({ warn: false, platforms: ['gmail-android', 'yahoo-mail'] })
-    const spy = spyOn(console, 'warn')
+    const spy = jest.spyOn(console, 'warn').mockImplementation()
     const result = val.validate({ backgroundSize: '11px' }, '<Test>')
-    spy.restore()
-    expect(spy).toNotHaveBeenCalled()
+    expect(spy).not.toHaveBeenCalled()
     expect(result).toBe(undefined)
   })
 

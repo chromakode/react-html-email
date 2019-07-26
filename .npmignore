@@ -1,8 +1,9 @@
 examples/
 scripts/
 src/
-test/
+__tests__/
 coverage/
 .babelrc
+.eslintignore
 .eslintrc
 .travis.yml

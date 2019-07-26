@@ -1,16 +1,14 @@
 language: node_js
 
 env:
-  - REACT_VERSION=15.4.0
-  - REACT_VERSION=15.3.0
-  - REACT_VERSION=15.2.1
-  - REACT_VERSION=0.14
+  - REACT_VERSION=16.0.0
 
 node_js:
   - "4"
   - "6"
+  - "8"
 
-before_install:
+after_install:
   - npm install react@$REACT_VERSION react-dom@$REACT_VERSION
 
 script:
