@@ -1,5 +1,13 @@
 # react-html-email
 
+## 2021 update:
+
+`react-html-email` is presently unmaintained. As React has matured, it is no longer as necessary to use a separate library to generate email-specific markup. I'd encourage you to look at more recent CSS-in-JS and style inlining component libraries as the basis for building your own email design system, though these components can serve as a useful starting point.
+
+I think the future of this project would be a generic set of design components for email templates -- something akin to [Chakra UI](https://chakra-ui.com/) for email. If you'd be interested in taking ownership of this project and tackling that, drop me a line at react-html-email@chromakode.com.
+
+---
+
 [![Build Status](https://img.shields.io/travis/chromakode/react-html-email/master.svg?style=flat-square)](https://travis-ci.org/chromakode/react-html-email)
 [![Coverage Status](https://img.shields.io/codecov/c/github/chromakode/react-html-email/master.svg?style=flat-square)](https://codecov.io/github/chromakode/react-html-email?branch=master)
 [![npm](https://img.shields.io/npm/v/react-html-email.svg?style=flat-square)](https://www.npmjs.com/package/react-html-email)
