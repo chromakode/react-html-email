@@ -1,6 +1,6 @@
 # react-html-email
 
-## 2021 update:
+## :warning: Currently Unmaintained
 
 `react-html-email` is presently unmaintained. As React has matured, it is no longer as necessary to use a separate library to generate email-specific markup. I'd encourage you to look at more recent CSS-in-JS and style inlining component libraries as the basis for building your own email design system, though these components can serve as a useful starting point.
 
