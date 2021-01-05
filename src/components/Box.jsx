@@ -4,7 +4,7 @@ import EmailPropTypes from '../PropTypes'
 
 export default function Box({ children, ...props }) {
   return (
-    <table {...props}>
+    <table {...props} className={props.className}>
       <tbody>
         {children}
       </tbody>
@@ -13,6 +13,7 @@ export default function Box({ children, ...props }) {
 }
 
 Box.propTypes = {
+  className: PropTypes.string,
   cellPadding: PropTypes.number,
   cellSpacing: PropTypes.number,
   border: PropTypes.string,
