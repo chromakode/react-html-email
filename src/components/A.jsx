@@ -10,6 +10,7 @@ export default function A(props) {
       download={props.download}
       href={props.href}
       target="_blank"
+      rel="noopener noreferrer"
       style={{
         color: props.color,
         textDecoration: props.textDecoration,
