@@ -133,6 +133,9 @@ You can pass a string prop `headCSS` to your `<Email>` component. You can see it
 ## Mailchimp attributes
 If you're using Mailchimp and need to add their custom `mc:edit` attributes to your markup, we recommend using the [mailchimpify](http://github.com/Roilan/mailchimpify) module.
 
+## Browser support
+If you're going to load this library in your browser you need to make sure it support ES6. Currently the target environment is node.js 4.0.0 so you might get parsing error if you try to load this in IE11 for example.
+
 ## License
 
 [MIT](https://github.com/chromakode/react-html-email/blob/master/LICENSE)
