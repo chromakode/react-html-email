@@ -13,6 +13,7 @@ export default function Email(props) {
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{props.title}</title>
+        {props.headTags}
         {props.headCSS && <style type="text/css">{props.headCSS}</style>}
       </head>
       <body
@@ -45,6 +46,7 @@ Email.propTypes = {
   cellSpacing: PropTypes.number,
   style: EmailPropTypes.style,
   headCSS: PropTypes.string,
+  headTags: PropTypes.node,
   width: PropTypes.string,
   align: PropTypes.oneOf(['left', 'center', 'right']),
   valign: PropTypes.oneOf(['top', 'middle', 'bottom']),
@@ -62,6 +64,7 @@ Email.defaultProps = {
   cellSpacing: undefined,
   style: undefined,
   headCSS: undefined,
+  headTags: undefined,
   bodyStyle: undefined,
   children: undefined,
 }
