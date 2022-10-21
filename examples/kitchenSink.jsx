@@ -6,7 +6,7 @@ const css = `
   font-size: 20px !important;
 }`.trim()
 
-const sourceURL = 'https://raw.githubusercontent.com/chromakode/react-html-email/master/examples/kitchenSink.js'
+const sourceURL = 'https://raw.githubusercontent.com/chromakode/react-html-email/master/examples/kitchenSink.jsx'
 
 const email = (
   <Email title="Test Email" headCSS={css}>
